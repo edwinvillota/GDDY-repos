@@ -5,9 +5,15 @@ const ReposApi = APIClient('repos');
 
 const getAllRepos = () =>
 	ReposApi<Repository[]>({
-		url: '/repos',
+		url: '/orgs/godaddy/repos',
+	});
+
+const getRepoByName = (name: string) =>
+	ReposApi<Repository>({
+		url: `/repos/godaddy/${name}`,
 	});
 
 export default {
 	getAllRepos,
+	getRepoByName,
 };

@@ -13,4 +13,6 @@ export interface Repository {
 	open_issues: number;
 	html_url: string;
 	language: RepositoryLanguage;
+	forks: number;
+	subscribers_count: number;
 }

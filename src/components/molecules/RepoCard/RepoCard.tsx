@@ -1,4 +1,5 @@
 import type { FC } from 'react';
+import { Link } from 'react-router';
 import type { Repository } from '@/common/types/models/Repository';
 import { RepositoryLanguageIcon } from '@/components/atoms/RepositoryLanguageIcon/RepositoryLanguageIcon';
 import { RepoCardSkeleton } from './RepoCardSkeleton';
@@ -36,14 +37,13 @@ export const RepoCard: FC<RepoCardProps> = ({
 			<p className="text-sm text-neutral-300 mb-2 line-clamp-3 transition-all duration-300 group-hover:text-white">
 				{repository.description}
 			</p>
-			<a
-				href={repository.html_url}
-				target="_blank"
-				rel="noopener noreferrer"
+			<Link
+				to={`/repository/${repository.name}`}
 				className="mt-auto text-lime-400 hover:underline text-sm transition-colors duration-200 hover:text-lime-300"
+				viewTransition
 			>
-				View on GitHub
-			</a>
+				View
+			</Link>
 		</div>
 	);
 };
