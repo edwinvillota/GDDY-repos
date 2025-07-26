@@ -1,11 +1,14 @@
 import { BrowserRouter, Route, Routes } from 'react-router';
-import Home from '@/screens/Home';
+import { MainLayout } from '@/components/layouts/MainLayout';
+import Repositories from '@/screens/repositories/Repositories';
 
 const Router = () => {
 	return (
 		<BrowserRouter>
 			<Routes>
-				<Route index element={<Home />} />
+				<Route element={<MainLayout />}>
+					<Route index element={<Repositories />} />
+				</Route>
 			</Routes>
 		</BrowserRouter>
 	);

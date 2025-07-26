@@ -1,4 +1,5 @@
 import type { Owner } from './Owner';
+import type { RepositoryLanguage } from './RepositoryLanguage';
 
 export interface Repository {
 	id: number;
@@ -10,4 +11,6 @@ export interface Repository {
 	updated_at: string;
 	clone_url: string;
 	open_issues: number;
+	html_url: string;
+	language: RepositoryLanguage;
 }
