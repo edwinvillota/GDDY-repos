@@ -5,9 +5,7 @@ import { Outlet, useNavigate } from 'react-router';
 export const PageLayout: FC<PropsWithChildren> = () => {
 	const navigate = useNavigate();
 	const handleGoBack = () => {
-		navigate('/', {
-			viewTransition: true,
-		});
+		navigate('/');
 	};
 	return (
 		<>
