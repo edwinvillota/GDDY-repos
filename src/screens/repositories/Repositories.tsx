@@ -1,5 +1,5 @@
 import type { FC } from 'react';
-import { RepositoriesGrid } from './components/RepositoriesGrid';
+import { RepositoriesGrid } from './components/RepositoriesGrid/RepositoriesGrid';
 
 const Repositories: FC = () => {
 	return (
