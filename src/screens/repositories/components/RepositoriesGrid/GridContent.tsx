@@ -4,8 +4,8 @@ import { RepoCardSkeleton } from '@/components/molecules/RepoCard/RepoCardSkelet
 
 interface GridContentProps {
 	filteredData: Repository[] | undefined;
-	isFetching: boolean;
-	isSearching: boolean;
+	isFetching?: boolean;
+	isSearching?: boolean;
 }
 
 export const GridContent = ({

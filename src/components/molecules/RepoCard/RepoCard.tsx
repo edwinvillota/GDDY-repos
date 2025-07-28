@@ -17,6 +17,7 @@ export const RepoCard: FC<RepoCardProps> = ({
 
 	return (
 		<div
+			data-testid={`repocard-${repository.name}`}
 			className="
 				bg-neutral-900/90 backdrop-blur rounded-xl shadow-lg p-6 flex flex-col items-start border border-neutral-800
 				hover:scale-105 hover:shadow-2xl hover:border-lime-400 transition-all duration-300
