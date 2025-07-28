@@ -35,12 +35,13 @@ export const RepositoryLanguageIcon: FC<RepositoryLanguageIconProps> = ({
 }) => {
 	const Icon = LANGUAGE_ICON[language];
 
-	if (!Icon) return <CgSearchLoading {...props} />;
+	if (!Icon) return <CgSearchLoading {...props} data-testid="default-icon" />;
 
 	return (
 		<Suspense
 			fallback={
 				<div
+					role="progressbar"
 					className="inline-block bg-neutral-600 animate-pulse rounded w-6 h-6"
 					style={{
 						height: props.size,
@@ -49,7 +50,7 @@ export const RepositoryLanguageIcon: FC<RepositoryLanguageIconProps> = ({
 				/>
 			}
 		>
-			<Icon {...props} />
+			<Icon {...props} data-testid={`icon-${language}`} />
 		</Suspense>
 	);
 };
