@@ -1,59 +1,48 @@
-# React Vite TypeScript Biome Template
+# GoDaddy repositories viewer
 
-A modern template for creating React applications using [Vite](https://vitejs.dev/), [TypeScript](https://www.typescriptlang.org/), and [Biome](https://biomejs.dev/) for code formatting and linting.
+React/Vite single page application app
 
-## Features
+## Prerequisites
 
-- ⚡️ Fast development with Vite
-- ⚛️ React 19+
-- 🛡️ TypeScript for static typing
-- 🧹 Biome for formatting and linting
-- 📦 Ready-to-use project structure
+- Node V20+
 
-## Getting Started
+## How to run the project?
 
-1. **Clone the repository:**
+1. Clone the repo: `git clone https://github.com/edwinvillota/GDDY-repos.git`
+2. Install dependencies: `npm run install`
+3. Rename the file `.env.example` to `.env` to add the necessary environment
+   variables.
+4. Run the project: `npm run dev`
+5. Open `http://localhost:3000/`
 
-   ```sh
-   git clone <repository-url>
-   cd <project-directory>
-   ```
+## Stack description
 
-2. **Install dependencies:**
+- **Library/Framework**: React v19, Typescript v5
+- **State manager**: Tanstack/react-query v5
+- **Bundler**: Vite
+- **Styles**: Tailwindcss v4
+- **Routes**: React Router v7
+- **Testing**: Vitest v3, React testing library v16
+- **Tools**:
+  - **husky**: Git hooks
+  - **biome**: Linter (Faster than ESlint)
 
-   ```sh
-   npm install
-   ```
+## Stack decisions justification
 
-3. **Start the development server:**
+- **Tanstack/react-query v5**: Efficiently manages server state and caching in
+  React applications, reducing boilerplate and improving data fetching
+  performance.
+- **Vite**: Provides fast development startup and hot module replacement compared
+  to Webpack, thanks to native ES modules and optimized build process.
+- **Vitest**: Offers lightning-fast unit testing with native ESM support and
+  instant feedback, outperforming Jest in speed and integration with Vite
+  projects.
 
-   ```sh
-   npm run dev
-   ```
+## Future Improvements
 
-## Scripts
-
-- `npm run dev` — Start the development server
-- `npm run build` — Build for production
-- `npm run preview` — Preview the production build
-- `npm run format` — Format code with Biome
-- `npm run lint` — Lint code with Biome
-
-## Project Structure
-
-react-app-template/
-├── public/
-│ └── vite.svg
-├── src/
-│ ├── main.tsx
-│ └── vite-env.d.ts
-├── .gitignore
-├── README.md
-├── biome.json
-├── index.html
-├── package.json
-├── package-lock.json
-├── tsconfig.json
-├── tsconfig.node.json
-├── vite.config.ts
-└── node_modules/
+- Add integration tests to the screens components (probably using MSW to mock
+  API responses).
+- Add E2E tests with cypress or playwright.
+- Enhance the repository details screen (the API doesn't provide enough data
+  to build a comprehensive screen).
+- Add page navigation animations (using View Transitions API)
